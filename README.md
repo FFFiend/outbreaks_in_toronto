@@ -15,6 +15,4 @@ The repo is structured as:
 -   `scripts` contains the R scripts used to simulate, download and clean data.
 
 # Note on LLM Usage
-ChatGPT-3.5 was used at various times throughout the investigation of 
-the outbreak data in 2023. A detailed log of the usage can be found in
-```inputs/llm/usage.txt```.
+ChatGPT-3.5 was used to simulate the data used in the investigation. A detailed log of the usage can be found in ```inputs/llm/usage.txt```.
