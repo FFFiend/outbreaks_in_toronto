@@ -48,3 +48,4 @@ data %>%
        x = "Date",
        y = "Total Number of Cases") +
   theme_minimal()
+
