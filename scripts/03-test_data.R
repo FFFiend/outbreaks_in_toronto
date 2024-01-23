@@ -1,5 +1,6 @@
 #### Preamble ####
-# Purpose: T
+# Purpose: To deprecate all columns except date of outbreak starting and the
+# causative agent-1 column.
 # Author: Owais Zahid
 # Date: 22 January 2024
 # Contact: owais.zahid@mail.utoronto.ca
