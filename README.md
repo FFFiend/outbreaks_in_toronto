@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repo provides an analysis on the impact of outbreaks of communicable diseases 
+This repo provides an analysis on the contribution of outbreaks of communicable diseases 
 other than COVID-19 for the year 2023 in health institutions located in Ontario.
 
 ## File Structure
@@ -15,4 +15,4 @@ The repo is structured as:
 -   `scripts` contains the R scripts used to simulate, download and clean data.
 
 # Note on LLM Usage
-ChatGPT-3.5 was used to aid in simulating the data used in the investigation. More specifically, it was used within ```scripts/00-simulate_data.R```. A detailed log of the usage can be found in ```inputs/llm/usage.txt```.
+ChatGPT-3.5 was used to aid in simulating the data used in the investigation, as well as to help generate plots used in the paper. A detailed log of the usage can be found in ```inputs/llm/usage.txt```.
