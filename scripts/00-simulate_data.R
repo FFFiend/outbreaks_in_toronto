@@ -12,6 +12,9 @@ library(tidyverse)
 ### Setting prime number seed ###
 set.seed(479)
 
+# NOTE: the following code was generated using the help of ChatGPT-3.5
+# A detailed log of the conversation can be found in inputs/llm/usage.txt
+
 # Step 1: Generate random data
 # choosing 1067 as the number of entries as that is the dataset's size
 n_entries <- 1067
