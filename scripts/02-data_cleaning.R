@@ -23,5 +23,5 @@ column_list= colnames(raw_data)
 chosen_columns <- raw_data %>% select("Date.Outbreak.Began", "Causative.Agent.1")
 
 # saving cleaned data back to csv
-write_csv(chosen_columns, "inputs/data/raw_data.csv")
+write_csv(chosen_columns, "outputs/data/cleaned_data.csv")
 
