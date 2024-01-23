@@ -18,7 +18,8 @@ raw_data = read.csv("inputs/data/raw_data.csv")
 # obtain the col nmaes
 column_list= colnames(raw_data)
 
-# anonymizing data entries by reducing to _id and Causative Agent-1
+# anonymizing data entries by reducing to date outbreak began
+# and Causative Agent-1
 chosen_columns <- raw_data %>% select("Date.Outbreak.Began", "Causative.Agent.1")
 
 # saving cleaned data back to csv
