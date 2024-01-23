@@ -1,5 +1,5 @@
 ---
-title: "On the Contribution of Communicable Diseases Other Than COVID-19 to Outbreaks in Healthcare Institutions in Ontario"
+title: "On the Contribution of COVID-19 compared to other Communicable Diseases towards Outbreaks in Healthcare Institutions in Ontario"
 author: 
   - Owais Zahid
 thanks: "Code and data are available at: https://github.com/FFFiend/outbreaks_in_toronto"
