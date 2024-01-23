@@ -15,4 +15,4 @@ The repo is structured as:
 -   `scripts` contains the R scripts used to simulate, download and clean data.
 
 # Note on LLM Usage
-ChatGPT-3.5 was used to simulate the data used in the investigation. A detailed log of the usage can be found in ```inputs/llm/usage.txt```.
+ChatGPT-3.5 was used to aid in simulating the data used in the investigation. More specifically, it was used within ```scripts/00-simulate_data.R```. A detailed log of the usage can be found in ```inputs/llm/usage.txt```.
