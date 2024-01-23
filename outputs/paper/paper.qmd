@@ -33,7 +33,7 @@ In subsequent sections, the data will be examined closely, cleaned and contribut
 
 
 # Data 
-The outbreak data is from "Outbreaks in Toronto Healthcare Institutions" on the Open Data Toronto website [@citeopentoronto]. 
+The outbreak data is from "Outbreaks in Toronto Healthcare Institutions" [@citedata] on the Open Data Toronto website [@citeopentoronto]. 
 
 All data anlaysis was done using the R programming language [@citeR], on the R-Studio platform [@citeRStudio]. Furthermore, the libraries tidyverse [@citetidyverse] and here [@citehere] were also used.
 
@@ -61,9 +61,9 @@ ggplot(grab_data, aes(x = factor(Causative.Agent.1), fill = factor(Causative.Age
        y = "Number of Cases") +
     theme(axis.text.x = element_text(angle = 45, hjust = 1),
         legend.position = "none",
-        plot.title = element_text(size = 10),  # Adjust title size
-        axis.title.x = element_text(size = 12),  # Adjust x-axis label size
-        axis.title.y = element_text(size = 12))
+        plot.title = element_text(size = 8),  # Adjust title size
+        axis.title.x = element_text(size = 8),  # Adjust x-axis label size
+        axis.title.y = element_text(size = 8))
 ```
 It can be observed in Figure 1, that COVID-19 was the highest contributor to outbreaks in 2023 by far, with exactly 700 out of the total 1066 outbreaks (or 65.66%) in Ontario. Further investigation can be done to observe the spread of COVID-19 cases throughout the year as follows:
 ```{r}
@@ -79,15 +79,15 @@ covid_data$Date.Outbreak.Began <- as.Date(covid_data$Date.Outbreak.Began)
 
 ggplot(covid_data, aes(x = format(Date.Outbreak.Began, "%m"), fill = Causative.Agent.1)) +
   geom_bar(stat = "count") +
-  labs(title = "Figure 2: Number of COVID-19 Cases Over Months in 2023",
+  labs(title = "Figure 2: Number of COVID-19 Cases per Month in 2023",
        x = "Month",
        y = "Number of Cases") +
   scale_x_discrete(labels = month.abb) +
   theme(
     legend.position="none",
-    plot.title=element_text(size=10),
-    axis.title.x = element_text(size = 12),  # Adjust x-axis label size
-    axis.title.y = element_text(size = 12)
+    plot.title=element_text(size=8),
+    axis.title.x = element_text(size = 8),  # Adjust x-axis label size
+    axis.title.y = element_text(size = 8)
   )
 ```
 It can be observed in Figure 2, that most of the COVID-19 outbreaks occurred around the start of Winter towards the end of the year. The data is left skewed, and the maximum number of outbreaks (131) was recorded in December.
@@ -106,13 +106,18 @@ data_filtered <- grab_data %>%
 # Create a histogram
 ggplot(data_filtered, aes(x = month, fill = `Causative.Agent.1`)) +
   geom_bar() +
-  labs(title = "Cases per Month and Disease (Feb to Aug 2023)",
+  labs(title = "Figure 3: Number of Outbreak Cases per Month in 2023",
        x = "Month",
        y = "Number of Cases") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),legend.position="none")
-
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        legend.position="bottom",
+        legend.text = element_text(size = 4),  # Set legend text size
+        legend.title = element_text(size = 6),
+        plot.title = element_text(size=8),
+        axis.title.x = element_text(size=8),
+        axis.title.y = element_text(size=8))
 ```
-It can be seen that even among months where COVID-19 was seemingly not spiking (i.e in the middle of the year) it still made up the majority percentage of all outbreaks within those months.
+It can be seen in Figure 3, that even among months where COVID-19 was seemingly not spiking (i.e in the middle of the year) it still made up the majority percentage of all outbreaks within those months.
 
 
 \newpage
