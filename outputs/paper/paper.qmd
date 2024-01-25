@@ -5,7 +5,7 @@ author:
 thanks: "Code and data are available at: https://github.com/FFFiend/outbreaks_in_toronto"
 date: today
 date-format: long
-abstract: "This paper examines the contribution of COVID-19 to the total number of outbreaks within healthcare institutions in Ontario over all months in 2023. It was found that COVID-19 was in fact the highest contributor to outbreaks for the aforementioned year."
+abstract: "This paper examines the contribution of COVID-19 to the total number of outbreaks within healthcare institutions in Ontario over all months in 2023. It was found that COVID-19 was in fact the highest contributor to outbreaks for the aforementioned year. This investigation is important because it helps healthcare institutions within the province recognize that they need to enforce stricter guidelines surrounding patient hygiene."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -48,7 +48,7 @@ raw_csv = read_csv(file=here("inputs/data/raw_data.csv"))
 cols = colnames(raw_csv)
 cols
 ```
-The focus will be on the the "Date Outbreak Began" and "Causative Agent-1" columns. The "Causative Agent-2" column will be ignored as some entries are missing values in the aforementioned column. Since the identity of each entry (i.e the institution name and address) are of no consequence in our analysis, they will also be ignored.
+The focus will be on the the "Date Outbreak Began" and "Causative Agent-1" columns. The "Causative Agent-2" column will be ignored as some entries are missing values in the aforementioned column. Since the identity of each entry (i.e the institution name, address, and outbreak setting) are of no consequence in our analysis, they will also be ignored. The "_id" variable simply refers to the actual index of the entry within the dataset, and so that is not worth exploring either. We do not concern ourselves with "Date Declared Over" as the speed at which individuals recover from COVID-19 is not the focus of this paper. 
 
 # Results
 We first begin by plotting the number of cases contributed by each of the 18 unique diseases responsible for outbreaks in 2023. The "Pending" category has also been included and the following histogram is obtained. 
@@ -90,9 +90,11 @@ ggplot(covid_data, aes(x = format(Date.Outbreak.Began, "%m"), fill = Causative.A
     axis.title.y = element_text(size = 8)
   )
 ```
-It can be observed in Figure 2, that most of the COVID-19 outbreaks occurred around the start of Winter towards the end of the year. The data is left skewed, and the maximum number of outbreaks (131) was recorded in December.
+It can be observed in Figure 2, that most of the COVID-19 outbreaks occurred around the start of Winter towards the end of the year. The data is left skewed, and the maximum number of outbreaks (131) was recorded in December. That being said, there is a local peak of 78 cases in January. 
 
-A detailed breakdown of outbreaks attributed to the 19 categories of diseases (including Pending) within healthcare institutions between the months of February and August can be seen below:
+Although the number of COVID-19 outbreaks starts to increase from September, it may still be the highest contributor towards outbreaks in months where the total number of cases is relatively mild in comparison.
+
+Thus, detailed breakdown of outbreaks attributed to the 19 categories of diseases (including Pending,) within healthcare institutions between the months of February and August (ordered alphabetically) can be seen below:
 
 ```{r}
 #| include: true
@@ -117,7 +119,10 @@ ggplot(data_filtered, aes(x = month, fill = `Causative.Agent.1`)) +
         axis.title.x = element_text(size=8),
         axis.title.y = element_text(size=8))
 ```
-It can be seen in Figure 3, that even among months where COVID-19 was seemingly not spiking (i.e in the middle of the year) it still made up the majority percentage of all outbreaks within those months.
+It can be seen in Figure 3, that even among months where COVID-19 was seemingly not spiking (i.e in the middle of the year) it still made up the majority percentage of all outbreaks within those months, i.e it was the highest contributor as shown by the plot above.
+
+# Conclusion
+We can thus conclude that healthcare institutions in Ontario have their work cut out for themselves if they wish to reduce the number of outbreaks that occur moving forward. This may be accomplished by adding more posters on hygiene and masking etiquette in and around the institutions, adding safety screen shields at any and all help desks, and enforcing both medical staff and patients to wear face shields, or face masks at all times. 
 
 
 \newpage
