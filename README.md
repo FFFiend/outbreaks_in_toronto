@@ -2,8 +2,7 @@
 
 ## Overview
 
-This repo provides an analysis on the contribution of outbreaks of communicable diseases 
-other than COVID-19 for the year 2023 in health institutions located in Ontario.
+This repo provides an analysis on the contribution of outbreaks of COVID-19 compared to other communicable diseases for the year 2023 in health institutions located in Ontario.
 
 ## File Structure
 
